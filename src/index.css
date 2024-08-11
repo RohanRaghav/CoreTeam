@@ -1,13 +1,82 @@
+/* Reset and base styles */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: var(--background);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Code block font */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Theme styles */
+.app {
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header, footer {
+  background: var(--background);
+  padding: 10px 0;
+}
+
+/* Light mode styles */
+.light {
+  --background: #FFF8F3;
+  --text-color: #405D72;
+  --header-footer-background: #405D72;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+/* Dark mode styles */
+.dark {
+  --background: #405D72;
+  --text-color: #FFF8F3;
+  --header-footer-background: #405D72;
+  background-color: var(--background);
+  color: var(--text-color);
+}
+
+/* Toggle button styles */
+.theme-toggle-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh; /* Ensure the app covers the full viewport height */
+  background-color: var(--background-color); /* Use background color for consistency */
+}
+
+/* Ensure all main content areas cover the full screen */
+.formhandle, .submission-container, .colorings, .wrappers {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Prevent scrolling on body and html */
+body {
+  overflow-x: hidden;
+}
+
+/* Ensure the wrapper elements fit within the viewport */
+.wrappers {
+  overflow: hidden;
 }
