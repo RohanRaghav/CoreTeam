@@ -35,19 +35,19 @@ const Notify = () => {
 
     return (
         <div className="content-upload-container">
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="content">Enter your content:</label>
-                <textarea
-                    id="content"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Write your content here..."
-                    rows="6"
-                    cols="50"
-                />
-                <button type="submit">Upload Content</button>
-            </form>
-            {feedback && <p>{feedback}</p>} {/* Inline feedback message */}
+        <form onSubmit={handleSubmit} className="form">
+          <label htmlFor="content" className="form-label">Enter your content:</label>
+          <textarea
+            id="content"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Write your content here..."
+            rows="6"
+            className="form-textarea"
+          />
+          <button type="submit" className="form-button">Upload Content</button>
+        </form>
+        {feedback && <p className="feedback">{feedback}</p>}
         </div>
     );
 };
