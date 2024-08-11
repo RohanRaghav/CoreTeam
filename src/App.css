@@ -509,7 +509,7 @@ box-shadow:  -20px -20px 60px #808080,
 
 .dashboard {
   padding: 10px;
-  max-width: 400px;
+  max-width: 300px;
   max-height: 500px;
   overflow-y: auto; /* Ensures scrollbar appears inside the box */
   float: left;
