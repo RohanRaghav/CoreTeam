@@ -459,8 +459,8 @@ box-shadow: inset -20px -20px 60px #797979,
 .submission-slote {
   flex: 1 1 30%; /* Allows each box to take up 30% of the container, adjusting based on screen width */
   margin: 10px;
-  max-width: 300px; /* Ensure max-width for all screens */
-  height: 300px;
+  max-width: 350px; /* Ensure max-width for all screens */
+  height: 350px;
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   display: flex;
   flex-direction: column;
