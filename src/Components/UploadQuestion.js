@@ -12,6 +12,7 @@ const UploadQuestions = () => {
     correctAnswer: ''
   }]);
   const [currentPage, setCurrentPage] = useState(0);
+  const [submissionStatus, setSubmissionStatus] = useState('');
 
   const handleQuestionChange = (e, field) => {
     const newQuestions = [...questions];
@@ -36,8 +37,22 @@ const UploadQuestions = () => {
     try {
       const response = await axios.post('https://new-server-psi.vercel.app/api/questions', { questions });
       console.log('Questions submitted:', response.data);
+      setSubmissionStatus('Submitted successfully');
+      
+      // Clear the form
+      setQuestions([{
+        title: '',
+        description: '',
+        option1: '',
+        option2: '',
+        option3: '',
+        option4: '',
+        correctAnswer: ''
+      }]);
+      setCurrentPage(0);
     } catch (error) {
       console.error('Error submitting questions:', error);
+      setSubmissionStatus('Failed to submit questions');
     }
   };
 
@@ -127,6 +142,7 @@ const UploadQuestions = () => {
       <div>
         <button onClick={handleSubmit} className="submit-button">Submit All Questions</button>
       </div>
+      {submissionStatus && <span className="submission-status">{submissionStatus}</span>}
     </div>
   );
 };
