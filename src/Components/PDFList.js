@@ -38,7 +38,7 @@ const PDFList = () => {
                   rel="noopener noreferrer"
                   className="assessment-link"
                 >
-                  Click this to access the file uploaded by {assessment.username} with UID: {assessment.UID} of day: {new Date(assessment.day).toLocaleDateString()}
+                  Click this to access the file uploaded by {assessment.username} with UID: {assessment.UID} of day: {assessment.day}
                 </a>
                 <button
                   className="download-button"
