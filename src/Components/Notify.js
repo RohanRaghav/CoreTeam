@@ -13,7 +13,7 @@ const Notify = () => {
         }
 
         try {
-            const response = await fetch('https://new-server-psi.vercel.app/api/uploadContent', {
+            const response = await fetch('https://new-server-psi.vercel.app/api/uploadNotification', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
