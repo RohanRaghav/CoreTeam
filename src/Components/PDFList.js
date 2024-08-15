@@ -28,28 +28,28 @@ const PDFList = () => {
   return (
     <div className='addjust'>
       {assessments.length > 0 ? (
-        <ul class="assessment-list">
-        {assessments.map((assessment) => (
-          <li key={assessment._id} class="assessment-item">
-            <div class="assessment-content">
-              <a
-                href={`/api/assessments/${assessment._id}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="assessment-link"
-              >
-                Click this to access the file uploaded by {assessment.username}
-              </a>
-              <button
-                class="download-button"
-                onClick={() => window.open(`/api/assessments/${assessment._id}`, '_blank')}
-              >
-                Download
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+        <ul className="assessment-list">
+          {assessments.map((assessment) => (
+            <li key={assessment._id} className="assessment-item">
+              <div className="assessment-content">
+                <a
+                  href={assessment.fileUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="assessment-link"
+                >
+                  Click this to access the file uploaded by {assessment.username} with uid: {assessment.UID} of day: {assessment.day}
+                </a>
+                <button
+                  className="download-button"
+                  onClick={() => window.open(assessment.fileUrl, '_blank')}
+                >
+                  Download
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
       ) : (
         <p>No PDF files available</p>
       )}
